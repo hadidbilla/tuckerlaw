@@ -1,0 +1,68 @@
+.info__card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.info__card-img-con {
+  width: 100%;
+  min-height: 370px;
+  height: 100%;
+  position: relative;
+}
+.info__card-img-con img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.info__card-content {
+  background-color: var(--color-secondary);
+  padding: 10px 16px;
+  padding-right: 35px;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  bottom: 0;
+}
+.info__card-content h3, .info__card-hover-con h3 {
+  color: var(--color-white);
+  font-size: 20px;
+}
+.info__card-hover-con a {
+  margin-bottom: 5px;
+  display: block;
+  max-width: calc(100% - 20px);
+}
+.info__card-hover-con {
+  position: absolute;
+  background-color: var(--color-secondary);
+  padding: 10px 16px;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  bottom: 0;
+  opacity: 0;
+  transition: 0.4s linear;
+}
+.info__card-icon-con {
+  display: flex;
+  align-items: center;
+  grid-gap: 7px;
+}
+.info__card-icon {
+  width: 20px;
+  height: 20px;
+}
+.info__card-icon path {
+  stroke: var(--color-white);
+}
+.info__card-link {
+  position: absolute;
+  right: 10px;
+  top: 14px;
+}
+
+.info__card:hover .info__card-hover-con {
+  opacity: 1;
+}/*# sourceMappingURL=info-card.css.map */

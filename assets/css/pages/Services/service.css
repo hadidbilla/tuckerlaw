@@ -1,0 +1,106 @@
+.services__title {
+  max-width: 50%;
+}
+.services__text {
+  max-width: 80%;
+  margin: 15px 0 30px 0;
+}
+.services__cat-sec {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+}
+.services__cat-sec:not(:last-child) {
+  margin-bottom: 40px;
+}
+.services__cat-img-con {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+.services__cat-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media only screen and (max-width: 500px) {
+  .services__cat-img {
+    display: none;
+  }
+}
+.services__cat-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-decoration: none;
+  cursor: pointer;
+}
+.services__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(0deg, rgba(14, 58, 104, 0.6), rgba(14, 58, 104, 0.6));
+}
+@media only screen and (max-width: 500px) {
+  .services__overlay {
+    background: var(--color-secondary);
+  }
+}
+.services__cat-hover {
+  position: relative;
+  height: 100%;
+  opacity: 1;
+  transition: 0.4s ease;
+  padding: 64px;
+}
+@media only screen and (max-width: 1200px) {
+  .services__cat-hover {
+    padding: 32px;
+  }
+}
+.services__cat-lists {
+  list-style: none;
+  padding: 0px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+@media screen and (max-width: 1000px) {
+  .services__cat-lists {
+    grid-gap: 10px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .services__cat-lists {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 500px) {
+  .services__cat-lists {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.services__cat-list {
+  position: relative;
+  margin-left: 20px;
+}
+.services .services__cat-item {
+  text-decoration: none;
+  margin-left: 10px;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+}
+@media screen and (max-width: 1000px) {
+  .services .services__cat-item {
+    font-size: 14px;
+  }
+}
+.services__cat-sec:hover .services__cat-hover {
+  opacity: 1;
+}/*# sourceMappingURL=service.css.map */

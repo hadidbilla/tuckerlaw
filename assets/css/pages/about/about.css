@@ -1,0 +1,123 @@
+.about__wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
+}
+@media only screen and (max-width: 1000px) {
+  .about__wrap {
+    grid-template-columns: 1fr;
+  }
+}
+.about__subtitle {
+  margin: 20px 0 30px 0;
+}
+.about__wrap-img-con {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 420px;
+  position: relative;
+}
+@media only screen and (max-width: 1200px) {
+  .about__wrap-img-con {
+    padding-bottom: 300px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .about__wrap-img-con {
+    padding-bottom: 80%;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-gap: 20px;
+  }
+}
+.about__wrap-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.about__wrap-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  grid-gap: 7px;
+  margin-top: 48px;
+  width: auto !important;
+}
+.about__counter {
+  margin-top: 64px;
+  margin-bottom: 96px;
+}
+@media only screen and (max-width: 1024px) {
+  .about__counter {
+    margin: 48px 0;
+  }
+}
+
+.about-contact .contact-con__contact-form {
+  background-color: var(--color-white);
+  padding: 0;
+}
+
+.about-contact .name-divide {
+  flex-direction: row;
+}
+
+.about-contact .contact-con__help {
+  display: none;
+}
+
+.about-contact {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 20px;
+}
+@media only screen and (max-width: 1200px) {
+  .about-contact {
+    grid-template-columns: 400px 1fr;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .about-contact {
+    grid-template-columns: 1fr;
+  }
+}
+.about-contact__content {
+  padding: 50px 40px;
+}
+@media only screen and (max-width: 1000px) {
+  .about-contact__content {
+    padding: 0px;
+  }
+}
+.about-contact__contact-text {
+  margin: 15px 0 30px 0;
+}
+.about-contact__img-con {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+@media only screen and (max-width: 1000px) {
+  .about-contact__img-con {
+    height: 0;
+    padding-bottom: 80%;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+}
+.about-contact__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+}/*# sourceMappingURL=about.css.map */

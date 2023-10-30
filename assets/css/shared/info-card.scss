@@ -1,0 +1,122 @@
+.info {
+
+    &__card {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    
+    }
+    
+    &__card-img-con {
+        width: 100%;
+        min-height: 370px;
+        height: 100%;
+        position: relative;
+    }
+    
+    &__card-img-con img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    &__card-content {
+        background-color: var(--color-secondary);
+        padding: 10px 16px;
+        padding-right: 35px;
+        position: absolute;
+        width: 100%;
+        box-sizing: border-box;
+        bottom: 0;
+    
+    }
+    
+    &__card-content h3,
+    &__card-hover-con h3 {
+        color: var(--color-white);
+        font-size: 20px;
+    }
+    
+    &__card-hover-con a {
+        margin-bottom: 5px;
+        display: block;
+        max-width: calc(100% - 20px);
+    }
+    
+    &__card-hover-con {
+        position: absolute;
+        background-color: var(--color-secondary);
+        padding: 10px 16px;
+        width: 100%;
+        box-sizing: border-box;
+        bottom: 0;
+        opacity: 0;
+        transition: .4s linear;
+    }
+    
+    &__card-icon-con {
+        display: flex;
+        align-items: center;
+        grid-gap: 7px;
+    }
+    
+    &__card-icon {
+        width: 20px;
+        height: 20px;
+    
+    }
+    
+    &__card-icon path {
+        stroke: var(--color-white);
+    
+    }
+    
+    
+    &__card-link {
+        position: absolute;
+        right: 10px;
+        top: 14px;
+    }
+
+}
+
+.info__card:hover .info__card-hover-con {
+    opacity: 1;
+
+}
+
+
+
+.cv__card-hover-con{
+    position: relative!important;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+}
+
+.single-serve__team__pdf{
+    margin: 0 80px;
+
+    .info__card-hover-con {
+        position: absolute;
+        background-color: var(--color-secondary);
+        padding: 10px 16px;
+        width: 100%;
+        box-sizing: border-box;
+        bottom: 0;
+        opacity: 1;
+        transition: none;
+    }
+
+    .single-serve__team-wrap{
+        margin-top: 20px;
+    }
+
+    .info__card-img-con{
+        img{
+            height: auto!important;
+        }
+    }
+
+}

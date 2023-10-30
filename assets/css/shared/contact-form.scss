@@ -1,0 +1,178 @@
+.contact-con {
+
+  &__contact-form {
+    background-color: var(--color-bg);
+    padding: 15px 0;
+    border-radius: 0px 0px 4px 4px;
+    padding-top: 32px;
+    padding-left: 32px ;
+      padding-right: 32px;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media (max-width: 1000px) {
+      height: auto;
+     
+      
+      
+    }
+
+  }
+
+  .wpcf7-spinner{
+    display: none;
+  }
+
+  &__contact-form p {
+    color: #344054;
+    margin: 0;
+
+  }
+
+  &__contact-form label {
+    display: inline-block;
+    font-family: var(--font-menu);
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.2;
+    margin-bottom: 5px;
+    color: var(--color-secondary);
+
+    &:not(:first-child) {
+      margin-top: 15px;
+
+    }
+  }
+
+  &__contact-form .intl-tel-input {
+    width: 100%;
+  }
+
+  &__contact-form input,
+  &__contact-form textarea {
+    width: 100%;
+    border: 1px solid #D0D5DD;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    border-radius: 4px;
+    padding: .6rem;
+    box-sizing: border-box;
+    font-family: var(--font-menu);
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #667085;
+   
+
+    &:not(:last-child) {
+      width: auto;
+    }
+  }
+
+  &__contact-form textarea {
+    resize: none;
+  }
+
+
+
+  &__contact-form .intl-tel-input.allow-dropdown .flag-container,
+  &__contact-form .intl-tel-input.separate-dial-code .flag-container {
+    left: 12px;
+  }
+
+  &__contact-form .intl-tel-input.allow-dropdown input,
+  &__contact-form .intl-tel-input.allow-dropdown input[type=tel],
+  &__contact-form .intl-tel-input.allow-dropdown input[type=text],
+  &__contact-form .intl-tel-input.separate-dial-code input,
+  &__contact-form .intl-tel-input.separate-dial-code input[type=tel],
+  &__contact-form .intl-tel-input.separate-dial-code input[type=text] {
+    padding-left: 60px;
+  }
+
+  &__contact-form span {
+    font-family: var(--font-menu);
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #667085;
+    display: block;
+  }
+
+
+
+  &__contact-agree .wpcf7-list-item {
+    margin: 0;
+  }
+
+  &__contact-agree .wpcf7-list-item input {
+    padding: 0;
+    height: initial;
+    width: initial;
+    margin-bottom: 0;
+    display: none;
+    cursor: pointer;
+
+    &+.wpcf7-list-item-label {
+      position: relative;
+      cursor: pointer;
+      
+
+      &::before {
+        content: '';
+        -webkit-appearance: none;
+        background: #FFFFFF;
+        border: 1px solid #667085;
+        border-radius: 4px;
+        padding: 10px;
+        display: inline-block;
+        position: relative;
+        vertical-align: middle;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+    }
+
+    &:checked {
+      &+.wpcf7-list-item-label {
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 1px;
+          left: 8px;
+          width: 5px;
+          height: 12px;
+          border: solid #667085;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+
+  }
+
+  &__contact-form input[type=submit] {
+    width: 100%;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    text-decoration: none;
+    cursor: pointer;
+    padding: 12px 24px;
+    margin-top: 20px;
+    border: transparent;
+    min-height: 48px;
+    height: 100%;
+  }
+}
+
+.name-divide {
+}

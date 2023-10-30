@@ -1,0 +1,61 @@
+.attorney {
+  background: var(--color-bg);
+}
+.attorney__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+@media screen and (max-width: 600px) {
+  .attorney__header {
+    margin: 2rem 0;
+    margin-top: 0;
+  }
+}
+.attorney__text {
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+@media screen and (max-width: 600px) {
+  .attorney__text__top {
+    display: none;
+  }
+}
+.attorney__text__btm {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .attorney__text__btm {
+    text-align: center;
+    display: block;
+    margin-bottom: 1rem;
+  }
+}
+.attorney__img__area {
+  margin: 3rem 0;
+  width: 100%;
+  position: relative;
+  padding-bottom: 58%;
+  overflow: hidden;
+}
+@media screen and (max-width: 600px) {
+  .attorney__img__area {
+    margin: 2rem 0;
+  }
+}
+.attorney__img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.attorney__btn__area {
+  display: flex;
+  justify-content: center;
+}
+.attorney__btn {
+  display: flex;
+  align-items: center;
+  grid-gap: 0.5rem;
+}/*# sourceMappingURL=attorneys.css.map */

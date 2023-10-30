@@ -1,0 +1,67 @@
+.attorney{
+  background: var(--color-bg);
+
+  &__header{
+    text-align: center;
+    margin-bottom: 3rem;
+
+    @media screen and (max-width: 600px) {
+      margin: 2rem 0;
+      margin-top: 0;
+    }
+  }
+
+  &__text{
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 1rem;
+  }
+
+  &__text__top{
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+  }
+
+  &__text__btm{
+    display: none;
+
+    @media screen and (max-width: 600px) {
+      text-align: center;
+      display: block;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__img__area{
+    margin: 3rem 0;
+    width: 100%;
+    position: relative;
+    padding-bottom: 58%;
+    overflow: hidden;
+    // opacity: 0;
+
+    @media screen and (max-width: 600px) {
+      margin: 2rem 0;
+    }
+  }
+
+  &__img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__btn__area{
+    display: flex;
+    justify-content: center;
+  }
+
+  &__btn{
+    display: flex;
+    align-items: center;
+    // padding: 12px 54px;
+    grid-gap: .5rem;
+  }
+}

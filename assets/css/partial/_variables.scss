@@ -1,0 +1,23 @@
+// @import "/assets/fonts/arial/fonts.css";
+// @import "/assets/fonts/georgia/fonts.css";
+
+:root {
+  --font-title: 'Georgia', serif;
+  --font-text: 'Arial', sans-serif;
+  --font-label: "Roboto", sans-serif;
+  // --font-menu: "IBM Plex Sans", sans-serif;
+  // --font-menu: "Segoe Ui", sans-serif;
+  // --font-menu: "Aeonik Font", sans-serif;
+  // --font-menu: "Rubik", sans-serif;
+  --font-menu: "Inter", sans-serif;
+  --color-primary: #DBB46A;
+  --color-secondary: #0E3A68;
+  --color-gray: #707173;
+  --color-dark: #000000;
+  --color-white: #fff;
+  --color-sidebar: #fafbfc;
+  --color-btn-bg: #F0F9FF;
+  --color-bluish: #026AA2;
+  --color-brown-bg: #FDFBF7;
+  --color-bg: rgba(219, 180, 106, 0.05);
+}

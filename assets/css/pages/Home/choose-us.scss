@@ -1,0 +1,158 @@
+.choose{
+
+  &__wrp{
+  }
+
+  &__header{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-gap: 1rem;
+    margin-bottom: 3rem;
+  }
+  
+  &__content__area{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+    grid-gap: 2rem;
+
+    @media screen and (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 650px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__card__title {
+    font-family: var(--font-title);
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 1.4;
+    color: var(--color-secondary);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    @media screen and (max-width: 1440px) {
+      font-size: 28px;
+    }
+    @media screen and (max-width: 1024px) {
+      font-size: 20px;
+    }
+  }
+
+  &__content__mid{
+    align-self: center;
+    @media screen and (max-width: 1024px) {
+      display: none;
+    }
+  }
+
+  &__main__img__area{
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    height: 0;
+  }
+
+  &__main__img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__card{
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1rem;
+    margin-bottom: 3rem;
+
+    //3 and 4 child margin bottom 0
+    &:nth-child(3){
+      margin-bottom: 0;
+    }
+    &:last-child{
+      margin-bottom: 0;
+    }
+      
+
+      @media screen and (max-width: 650px) {
+        margin-bottom: 3rem;
+      }
+    
+  }
+
+  &__card__lft{
+    align-items: flex-start;
+    text-align: left;
+    
+  }
+
+  &__card__content{
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1rem;
+  }
+
+  &__card__text{
+    position: relative;
+    padding-left: 25px;
+    p{
+      position: relative;
+      margin-bottom: 8px;
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+    
+    @media screen and (max-width: 1024px) {
+      padding-left: 23px;
+      text-align: left;
+    }
+    
+    
+  }
+
+  &__card__img{
+    @media screen and (max-width: 650px) {
+      max-width: 65px;
+    }
+  }
+
+  &__eth__img__area{
+    display: none;
+
+    @media screen and (max-width: 1024px) {
+      display: block;
+      position: relative;
+    max-width: 440px;
+    padding-bottom: 40%;
+    margin: auto;
+    height: 0;
+    margin-bottom: 2rem;
+    }
+    @media screen and (max-width: 650px) {
+      display: none;
+    }
+  }
+
+  &__eth__img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.read-more__link {
+  color: var(--color-secondary);
+}

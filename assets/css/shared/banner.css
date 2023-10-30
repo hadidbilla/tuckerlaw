@@ -1,0 +1,75 @@
+.other-hero {
+  position: relative;
+  overflow: hidden;
+}
+.other-hero__wrap, .other-hero__banner-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 96px 0;
+}
+@media screen and (max-width: 1024px) {
+  .other-hero__wrap, .other-hero__banner-container {
+    padding: 50px 0;
+  }
+}
+.other-hero__text {
+  position: relative;
+  z-index: 9;
+}
+.other-hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(0deg, rgba(14, 58, 104, 0.6), rgba(14, 58, 104, 0.6));
+  z-index: 1;
+}
+.other-hero__image {
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+@media only screen and (max-width: 600px) {
+  .other-hero__tag {
+    text-align: center;
+  }
+}
+.other-hero__subtext {
+  margin: 5px 0 30px 0;
+  max-width: 80%;
+  text-align: left;
+}
+@media only screen and (max-width: 600px) {
+  .other-hero__subtext {
+    text-align: center;
+    max-width: 100%;
+  }
+}
+.other-hero__button {
+  display: flex;
+  align-items: center;
+  grid-gap: 1rem;
+}
+@media only screen and (max-width: 600px) {
+  .other-hero__button {
+    flex-direction: column;
+    justify-content: center;
+    grid-gap: 1.5rem;
+  }
+}
+.other-hero__butn {
+  display: flex;
+  align-items: center;
+  grid-gap: 10px;
+}
+@media only screen and (max-width: 600px) {
+  .other-hero__butn {
+    justify-content: center;
+  }
+}/*# sourceMappingURL=banner.css.map */

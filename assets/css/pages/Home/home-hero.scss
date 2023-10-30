@@ -1,0 +1,346 @@
+.hhero{
+  overflow: hidden;
+  position: relative;
+  margin-top: 100px;
+
+  @media only screen and (max-width: 1400px) {
+    height: auto;
+  }
+
+  @media only screen and (max-width: 550px) {
+    height: auto;
+    padding-top: 0;
+  }
+
+  &__bg__img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    @media only screen and (max-width: 550px) {
+      display: none;
+    }
+    &--res{
+      display: none;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      @media only screen and (max-width: 550px) {
+        display: block;
+      }
+    }
+  }
+
+  &__subtitle{
+    margin-top: 8px;
+    margin-bottom: 0;
+    font-weight: normal;
+    color: var(--color-white);
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+    max-width: 800px;
+    position: relative;
+    z-index: 3;
+  }
+
+  &__overly{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(14, 58, 104, 0.5), rgba(14, 58, 104, 0.5));
+    z-index: 1;
+
+    &--res{
+      display: none;
+      position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(14, 58, 104, 0.5), rgba(14, 58, 104, 0.5));
+    z-index: 1;
+      @media only screen and (max-width: 550px) {
+        display: block;
+      }
+    }
+  }
+
+  &__wrp{
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: auto 480px;
+    height: 100%;
+
+    @media only screen and (max-width: 991px) {
+      grid-template-columns: repeat(1,1fr);
+      gap: 0rem;
+      padding-inline: 0;
+    }
+  }
+
+
+  
+  &__lft{
+    padding: 6rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    position: relative;
+
+    // @media only screen and (max-width: 1440px){
+    //   padding: 3rem 0;
+    // }
+
+    @media only screen and (max-width: 991px){
+      padding: 3rem 5%;
+      padding-top: 5rem;
+      text-align: center;
+      margin: auto;
+      align-items: center;
+    }
+  }
+
+  &__title{
+    color: var(--color-white);
+    text-shadow: 0px 5px 6px #00000033, 0px 8px 13px #0000000d, 0px 18px 23px #00000033;
+    // opacity: 0;
+    // transform: translateX(-200px);
+    font-family: var(--font-title);
+    font-weight: bold;
+    font-size: 56px;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 3;
+
+    @media screen and (max-width: 1440px) {
+      font-size: 40px;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    font-size: 38px;
+    letter-spacing: 0.02em;
+  }
+
+  @media only screen and (max-width: 550px) {
+    font-size: 34px;
+    letter-spacing: 0.02em;
+  }
+
+  }
+
+  &__link{
+    @media screen and (max-width: 550px) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__link__area{
+    // display: flex;
+    display: inline-flex;
+    grid-gap: 1.4rem;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 3;
+    @media (max-width: 1250px) {
+      
+      flex-direction: column;
+    }
+
+    @media (max-width: 1560px) {
+      margin-top: 1.5rem;
+    }
+    @media (max-width: 1024px) {
+      grid-gap: 1rem;
+    }
+    @media screen and (max-width: 550px) {
+      width: 100%;
+    }
+  }
+
+
+
+  &__rgt{
+    justify-self: end;
+    position: relative;
+    background: rgba(14, 58, 104, 1);
+
+    @media only screen and (max-width: 991px) {
+      justify-self: center;
+    }
+  }
+
+
+  &__rgt__wrp{
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    padding: 20% 2.5rem;
+    max-width: 400px;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+
+    @media only screen and (max-width: 991px) {
+      height: auto;
+      width: auto;
+      padding: 2rem;
+      padding-top: 2rem;
+    }
+    @media only screen and (max-width: 550px) {
+      max-width: 100%;
+    }
+    
+  }
+
+  &__lft__header{
+    @media only screen and (max-width: 991px) {
+      text-align: center;
+    }
+  }
+
+  &__header__title{
+    font-family: var(--font-title);
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    color: var(--color-white);
+
+    @media only screen and (max-width: 1440px) {
+      font-size: 26px;
+    }
+  }
+
+  &__header__subtitle{
+    font-weight: normal;
+    color: var(--color-white);
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+    margin: 1rem 0;
+    margin-bottom: 2rem;
+
+    @media only screen and (max-width: 1440px) {
+      margin-bottom: 1rem;
+      margin-top: .9rem;
+    }
+    
+    
+  }
+
+  &__frm{}
+
+  &__frm__inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+  }
+
+  &__frm__input{
+    padding: 14px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    font-size: 16px;
+    &:focus{
+      outline: none;
+    }
+  }
+
+  &__submit__btn--reset{
+    margin-top: 0!important;
+    background-color: transparent;
+    border: 1px solid #D0D5DD !important;
+    svg{
+      path{
+        stroke: #fff;
+      }
+    }
+    &:hover{
+      background-color: transparent!important;
+      box-shadow: none!important;
+    }
+  }
+
+  &__frm__select{
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    border-radius: 4px;
+    padding: 14px;
+    color: #707173;
+    
+   
+    &:focus{
+      outline: none;
+    }
+    // -webkit-appearance: none;
+    // &::-ms-expand {
+    //   display: none;
+    // }
+    
+  } 
+
+  &__select__placeholder{
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #707173;
+  }
+
+  &__option__fld{}
+
+  &__submit__btn{
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+    gap: 1rem;
+    // padding: .5rem 0px;
+    
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
+
+.align-left {
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.hhero .footer__logo-con {
+  margin-right: auto;
+  margin-left: 0;
+
+  @media only screen and (max-width: 990px) {
+    align-items: center;
+    margin-left: auto;
+  }
+}
+
+.hhero .footer__second-logo-con {
+  margin-top: 18px;
+  @media only screen and (max-width: 1120px) {
+    align-items: flex-start;
+  }
+  @media only screen and (max-width: 990px) {
+    margin-top: 38px;
+    align-items: center;
+  }
+}
+
+.hhero__frm__inputs .select {
+  font-size: 16px;
+}

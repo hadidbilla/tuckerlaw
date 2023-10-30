@@ -1,0 +1,147 @@
+.join {
+
+	margin: 48px 0;
+
+	&__overview-richtext {
+		font-weight: normal;
+		font-size: 20px;
+		line-height: 1.6;
+		letter-spacing: 0.04em;
+		color: var(--color-gray);
+
+		@media only screen and (max-width: 1440px) {
+			font-size: 18px;
+		}
+
+		@media only screen and (max-width: 480px) {
+			font-size: 16px;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 15px;
+		}
+
+		a {
+			color: #165ca9;
+			font-weight: 600;
+
+			&:hover {
+				text-decoration: underline;
+			}
+
+		}
+
+		ul {
+			li {
+				list-style: none;
+				position: relative;
+				font-weight: normal;
+				font-size: 18px;
+				line-height: 1.6;
+				letter-spacing: 0.04em;
+				color: var(--color-gray);
+
+				&--white {
+					color: var(--color-white);
+				}
+
+				@media only screen and (max-width: 480px) {
+					font-size: 16px;
+				}
+
+				&:not(:last-child) {
+					margin-bottom: 10px;
+				}
+			}
+		}
+
+		table {
+			th {
+				background-color: var(--color-secondary);
+				color: var(--color-white);
+				border: none;
+				font-family: var(--font-text);
+				font-weight: bold;
+				font-size: 18px;
+				line-height: 1.2;
+				text-transform: uppercase;
+			}
+
+			td {
+				border: 1px solid #D0D5DD;
+				box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+				font-weight: normal;
+				font-size: 18px;
+				line-height: 1.6;
+				letter-spacing: 0.04em;
+				color: var(--color-gray);
+			}
+
+			tr {
+				&:nth-child(even) {
+					background-color: rgba(219, 180, 106, 0.05);
+				}
+			}
+		}
+
+
+	}
+
+	&__pub{
+		display: flex;
+		align-items: center;
+		grid-gap: 10px;
+
+		
+	}
+
+	// &__pub__img{
+	// 	width: 20px!important;
+	// 	height: 20px!important;
+	// 	object-fit: contain!important;
+	// }
+
+	&__overview-richtext h3 {
+		color: var(--color-secondary);
+		margin: 20px 0 20px 0;
+		font-family: var(--font-title);
+		font-weight: bold;
+		font-size: 24px;
+		line-height: 1.4;
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+
+		@media screen and (max-width: 1024px) {
+			font-size: 20px;
+			letter-spacing: 0.02em;
+		}
+
+		@media screen and (max-width: 480px) {
+			font-size: 18px;
+		}
+	}
+
+	&__overview-richtext p {
+		font-weight: normal;
+		font-size: 18px;
+		line-height: 1.6;
+		letter-spacing: 0.04em;
+		color: var(--color-gray);
+
+		@media only screen and (max-width: 480px) {
+			font-size: 16px;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 15px;
+		}
+	}
+
+	&__overview-richtext img {
+		width: auto;
+		object-fit: contain;
+		margin: 15px 0;
+		max-height: 600px;
+	}
+
+}

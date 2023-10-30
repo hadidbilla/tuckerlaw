@@ -1,0 +1,50 @@
+.counter {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+@media only screen and (max-width: 1000px) {
+  .counter {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 580px) {
+  .counter {
+    grid-template-columns: 1fr;
+  }
+}
+.counter__card {
+  background-color: var(--color-white);
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  padding: 30px;
+}
+.counter__plus {
+  font-weight: bold;
+  font-size: 46px;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  letter-spacing: 0.02em;
+}
+@media screen and (max-width: 1440px) {
+  .counter__plus {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .counter__plus {
+    font-size: 38px;
+    letter-spacing: 0.02em;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .counter__plus {
+    font-size: 26px;
+    letter-spacing: 0.02em;
+  }
+}
+.counter__title {
+  color: var(--color-secondary);
+}/*# sourceMappingURL=counter.css.map */

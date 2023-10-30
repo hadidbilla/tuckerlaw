@@ -1,0 +1,145 @@
+.ofc {
+  margin-top: 110px;
+
+  &__cnt {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    @media screen and (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 650px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__card {
+    position: relative;
+    height: 84.7vh;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    transition: all 0.5s ease;
+    overflow: hidden;
+
+    @media screen and (max-width: 1380px) {
+      height: 80.7vh;
+    }
+
+    @media screen and (max-width: 1024px) {
+      height: 60.7vh;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      .ofc__card--title {
+        transition: all 0.5s ease;
+        color: var(--color-bluish);
+        // transform: scale(1.1);
+      }
+    }
+
+    &__img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      left: 0;
+      top: 0;
+    }
+
+    &--title {
+      position: relative;
+      color: rgb(255, 255, 255);
+      font-size: 2rem;
+      font-weight: 700;
+      text-shadow: rgba(0, 0, 0, 0.8) 0px 2px 2px;
+      text-transform: uppercase;
+      z-index: 2;
+      padding: 20px;
+    }
+
+    &--overly {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+      z-index: 1;
+    }
+  }
+}
+
+.slof {
+  margin-top: 50px;
+  max-width: 400px;
+
+  @media screen and (max-width: 991px) {
+    margin-top: 0px;
+    padding-left: 20px;
+  }
+
+  &__cnt {
+    display: grid;
+
+    gap: 40px;
+
+    @media screen and (max-width: 600px) {
+      gap: 30px;
+    }
+  }
+
+  &__text {
+    font-size: 20px;
+  }
+
+  &__rgt__cnt {
+    display: flex;
+
+    gap: 10px;
+
+    @media screen and (max-width: 991px) {
+      flex-direction: row;
+    }
+
+    a {
+      &:last-child {
+        color: var(--color-secondary);
+        text-decoration: underline;
+        font-size: 20px;
+      }
+    }
+  }
+
+  &-content {
+    display: flex;
+
+    gap: 10px;
+
+    @media screen and (max-width: 991px) {
+      flex-direction: row;
+    }
+
+    a {
+      &:last-child {
+        color: var(--color-secondary);
+        text-decoration: underline;
+        font-size: 20px;
+      }
+    }
+  }
+
+  &-cont {
+    svg {
+      height: 24px;
+      width: 24px;
+
+      // stroke: var(--color-bluish);
+      path {
+        stroke: var(--color-secondary);
+      }
+    }
+  }
+}

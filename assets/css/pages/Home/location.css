@@ -1,0 +1,108 @@
+.location {
+  margin-top: 90px;
+}
+@media screen and (max-width: 1024px) {
+  .location {
+    margin: 60px 0;
+  }
+}
+@media screen and (max-width: 800px) {
+  .location {
+    margin: 50px 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .location {
+    margin: 40px 0;
+  }
+}
+.location__wrap {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  grid-gap: 60px;
+}
+@media screen and (max-width: 1024px) {
+  .location__wrap {
+    grid-template-columns: 330px 1fr;
+  }
+}
+@media screen and (max-width: 960px) {
+  .location__wrap {
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+}
+.location__sec {
+  border: 0.5px solid var(--color-white);
+  padding: 24px;
+  border-radius: 2px 2px 0px 0px;
+  background-color: var(--color-secondary);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
+  transition: all 0.3s ease;
+}
+.location__sec--show {
+  background-color: var(--color-primary);
+}
+.location__sec:hover {
+  background-color: var(--color-primary);
+}
+.location__sec:hover .location__hidden {
+  max-height: 107px;
+}
+.location__sec--end-border {
+  border-radius: 0px 0px 2px 2px;
+}
+.location__sec-content {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  grid-gap: 10px;
+}
+.location__img-cont {
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.location__map {
+  width: 100%;
+  margin: auto;
+}
+@media screen and (max-width: 960px) {
+  .location__map {
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+}
+.location__map-img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.location__hidden {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
+}
+.location__hidden--show {
+  max-height: 107px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
+}
+.location__hidden--hide {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}/*# sourceMappingURL=location.css.map */

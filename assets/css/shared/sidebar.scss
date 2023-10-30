@@ -1,0 +1,158 @@
+.nav-res {
+  position: fixed;
+  z-index: 100;
+  background-color: #005CA9;
+  width: 100%;
+  top: 130px;
+  height: calc(100vh - 130px);
+
+  transform: translateX(-150%);
+  transition: all .4s ease-out;
+  backface-visibility: hidden;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__container {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+  }
+
+
+  &__link-flex {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1rem;
+  }
+
+  &__link {
+    max-width: 100%;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    cursor: pointer;
+  }
+
+  &__icon {
+    position: relative;
+
+    &::after {
+      content: "+";
+      position: absolute;
+      right: 2px;
+      top: 3px;
+      // transition: all .5s ease;
+      font-size: 25px;
+
+    }
+  }
+
+  &__childlink{
+    color: rgba(255, 255, 255, 0.8);
+  }
+  &__grandchildlink{
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  &__icon-active {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 2px;
+      background-color: var(--color-white);
+      right: 5px;
+      top: 15px;
+    }
+  }
+
+  &__grandgrandchildlink-sec{
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease-in-out;
+  }
+
+  &__grandchildlink-active{
+    max-height: 1000px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__link-res {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    color: #fff;
+    display: block;
+  }
+
+  ul {
+    padding-inline-start: 20px;
+
+    li {
+      &:last-child {
+        padding-bottom: 0px !important;
+      }
+    }
+  }
+
+
+
+  &__childlink-sec {
+    max-height: 0;
+    // visibility: hidden;
+    // opacity: 0;
+    backface-visibility: hidden;
+    transition: max-height 0.5s ease-out;
+    overflow: hidden;
+    margin-top: 8px;
+  }
+
+  &__grandchildlink-sec {
+    max-height: 0;
+    // visibility: hidden;
+    // opacity: 0;
+    backface-visibility: hidden;
+    transition: max-height 0.5s ease-out;
+    overflow: hidden;
+    margin-top: 8px;
+  }
+
+  
+  &__link-sec li {
+    list-style: none;
+    padding: 8px 0;
+  }
+
+  &__link-sec{
+    padding-left: 0!important;
+  }
+}
+
+
+
+
+.nav-res__childlink-sec-active {
+  max-height: 1000px;
+  overflow-y: scroll;
+  transition: max-height .5s ease-in;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+}
+
+.nav-res-active {
+  transform: translateX(0);
+}

@@ -1,0 +1,166 @@
+.management p {
+  margin: 15px 0;
+
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+  color: var(--color-gray);
+
+  &--white {
+    color: var(--color-white);
+  }
+
+  @media only screen and (max-width: 480px) {
+    font-size: 16px;
+  }
+}
+
+
+.management h3 {
+  font-family: var(--font-title);
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+
+  @media screen and (max-width: 1024px) {
+    font-size: 20px;
+    letter-spacing: 0.02em;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 18px;
+  }
+}
+
+.management img {
+  width: auto;
+  object-fit: contain;
+  max-height: 600px;
+  // margin: 15px 0;
+
+}
+
+.management {
+
+  margin-bottom: 6rem;
+
+  @media only screen and (max-width: 600px) {
+    margin-bottom: 5rem;
+  }
+
+  &__committee {
+    margin-top: 40px;
+  }
+
+  &__rich{
+    a {
+      color: var(--color-secondary);
+    }
+  }
+
+
+
+  &__committee-wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+
+    @media screen and (max-width: 1300px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (max-width: 960px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 650px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+  }
+
+  &__card-img-con {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  &__card-img-con img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+  }
+
+  &__card-content {
+    background-color: var(--color-secondary);
+    padding: 10px 16px;
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+    bottom: 0;
+
+  }
+
+  &__card-content h3,
+  &__card-hover-con h3 {
+    color: var(--color-white);
+    font-size: 20px;
+  }
+
+  &__card-hover-con h3 {
+    margin-bottom: 5px;
+  }
+
+  &__card-hover-con {
+    position: absolute;
+    background-color: var(--color-secondary);
+    padding: 10px 16px;
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+    bottom: 0;
+    opacity: 0;
+    transition: .4s linear;
+  }
+
+  &__card-icon-con {
+    display: flex;
+    align-items: center;
+    grid-gap: 7px;
+  }
+
+  &__card-icon {
+    width: 20px;
+    height: 20px;
+
+  }
+
+  &__card-icon path {
+    stroke: var(--color-white);
+
+  }
+
+
+  &__card-link {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+}
+
+.management__card:hover .management__card-hover-con {
+  opacity: 1;
+
+}
