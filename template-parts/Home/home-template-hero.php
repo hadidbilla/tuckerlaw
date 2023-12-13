@@ -47,6 +47,7 @@ acsb-hidden="true" >
         <div class="hhero__lft__header">
           <h2 tabindex="0" tabindex="0" class="hhero__header__title text" role="heading" aria-level="4">
             <?php echo get_theme_mod("gs_home_hero_form_title", "Find your legal Professional"); ?>
+            diiasb
           </h2>
           <p class="hhero__header__subtitle text"> <?php echo get_theme_mod("gs_home_hero_form_subtitle", "Choose from any or all of the categories below to find a legal professional that can help you."); ?> </p>
         </div>

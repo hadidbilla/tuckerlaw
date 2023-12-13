@@ -72,7 +72,7 @@ data-acsb-clickable="true" data-acsb-navigable="true" data-acsb-now-navigable="t
                 if ($office_location_meta['fax'][0]) {
                   ?>
             <div class="slof-content">
-              <a href="tel:<?php echo $office_location_meta['fax'][0] ?>" class="slof-cont" data-acsb-clickable="true" data-acsb-navigable="true" data-acsb-now-
+              <a href="tel:<?php echo $office_location_meta['fax'][0] ?>" class="slof-cont-fax" data-acsb-clickable="true" data-acsb-navigable="true" data-acsb-now-
 navigable="true">
                 <?php
                 set_query_var("color", "slof__icon2");

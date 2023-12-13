@@ -4,7 +4,8 @@
 
 <?php
     get_header();
-get_template_part('template-parts/shared/sidebar-nav-template');
+    get_template_part('template-parts/shared/cookies-modal');
+    get_template_part('template-parts/shared/sidebar-nav-template');
     get_template_part('template-parts/shared/sidebar-nav-template');
     get_template_part('template-parts/Home/home-template-hero'); 
     get_template_part('template-parts/Home/home-award-template');

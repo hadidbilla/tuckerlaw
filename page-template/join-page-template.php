@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Our Default Page */
+/* Template Name: Our Join us Page */
 //get page featured image by page id
 $page_meta_data = get_post_meta(get_the_ID());
 //get excerpt

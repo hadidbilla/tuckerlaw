@@ -92,7 +92,22 @@ function gs_history_customizer($wp_customize) {
 }
 
 
-add_action( 'customize_register', 'gs_history_customizer' );
+
+//Cookies Modal Customizes
+
+add_action( 'customize_register', 'gs_cookies_modal_customizer' );
+
+require_once __DIR__ . '/cookies-modal/cookies-modal-customizer.php';
+
+function gs_cookies_modal_customizer($wp_customize) {
+  $wp_customize->add_section("gs_cookies_modal", array(
+    "title" => __("Cookies Modal", "gs"),
+    "description" => __("You chnage your cookies modal content", "gs"),
+    "priority" => 30
+  ));
+
+  gs_cookies_modal_customize_register($wp_customize);
+}
 
 
 

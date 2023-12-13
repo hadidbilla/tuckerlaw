@@ -142,4 +142,16 @@
       }
     }
   }
+
+  &-cont-fax{
+    svg {
+      height: 24px;
+      width: 24px;
+
+      // stroke: var(--color-bluish);
+      path {
+        fill: var(--color-secondary);
+      }
+    }
+  }
 }

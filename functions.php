@@ -937,3 +937,33 @@ function gen_upload_mimes_vcard_support($mimes = array()){
   return $mimes;
 }
 add_filter('upload_mimes', 'gen_upload_mimes_vcard_support');
+
+
+
+//override the default template with custom template
+add_filter('template_include', 'custom_template_include', 99);
+function custom_template_include($template)
+{
+  //get the current page template
+  $current_page_template = get_post_meta(get_the_ID(), '_wp_page_template', true);
+  //get the url of current page
+  $url = $_SERVER['REQUEST_URI'];
+  //get the second part of url
+  $url = explode('/', $url);
+  //get the second part of url
+  $url = $url[2];
+
+  //check if $current_page is blog page
+
+  
+  //$current_page_template is empty then show with join page template
+  if (empty($current_page_template) && $url != 'people' && $url != 'news-insights' && !is_single() && !is_archive() && !is_author() && !is_category() && !is_tag()) {
+    //show with join page template
+    $template = get_template_directory() . '/page-template/join-page-template.php';
+
+    return $template;
+  } else {
+    return $template;
+  }
+
+}
