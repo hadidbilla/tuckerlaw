@@ -5,7 +5,8 @@ get_template_part('template-parts/shared/sidebar-nav-template');
 $custom_posts = get_posts(array(
   'post_name'        => 'offices', // Change 'name' to 'post_name'
   'post_type'   => 'office_location',
-  'post_status' => 'publish'
+  'post_status' => 'publish',
+  'posts_per_page' => -1
 ));
 ?>
 <div class="ofc">
@@ -13,7 +14,6 @@ $custom_posts = get_posts(array(
     <?php
     if ($custom_posts) {
       foreach ($custom_posts as $post) {
-
         $officeMetaData = get_post_meta($post->ID); // Replace 'city' with your actual meta key
     ?>
 
