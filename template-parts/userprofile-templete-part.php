@@ -905,6 +905,7 @@ get_template_part('template-parts/shared/sidebar-nav-template');
               } else {
                 echo '<a class="people__page-btn people__page-prev" href="' . add_query_arg('pages', $current_page - 1) . '">Previous</a>';
               }
+              
               for ($i = 1; $i <= $total_pages; $i++) {
                 if ($i == $current_page) {
                   echo '<span class="people__page-btn people__page-num current index__hide__pagenation">' . $i . '</span>';

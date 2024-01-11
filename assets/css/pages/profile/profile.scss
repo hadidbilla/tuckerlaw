@@ -148,7 +148,7 @@
 	}
 
 	&__name {
-		color: var(--color-white);
+		color: var(--color-white)!important;
 		text-transform: uppercase;
 	}
 
@@ -287,7 +287,7 @@
 		color: var(--color-secondary);
 	}
 
-	&__overview-richtext h3 {
+	&__overview-richtext h3,h2 {
 		color: var(--color-secondary);
 		margin: 30px 0 20px 0;
 		font-family: var(--font-title);
@@ -679,7 +679,7 @@
     color: var(--color-secondary);
 	}
 
-	&__overview-richtext h3 {
+	&__overview-richtext h3,h2 {
 		font-family: var(--font-title);
 		margin: 30px 0 20px 0;
 		font-weight: bold;

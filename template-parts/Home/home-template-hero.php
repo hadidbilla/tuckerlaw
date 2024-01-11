@@ -58,7 +58,7 @@ acsb-hidden="true" >
           <div class="hhero__frm__inputs">
             <input id="name" name="user-name" type="text" class="hhero__frm__input" placeholder="Name (Ex: John)" data-acsb-navigable="true" data-acsb-now-navigable="true"
 aria-hidden="false" data-acsb-hidden="false" data-acsb-validation-uuid="name" data-acsb-
-field-visible="true" aria-required="true" required="true" aria-invalid="true" aria-label="Name
+field-visible="true" aria-required="true"  aria-invalid="true" aria-label="Name
 (Ex: John)" data-acsb-tooltip="Name (Ex: John) | Required field">
           
             <div class="select-wrap">
@@ -71,7 +71,7 @@ field-visible="true" aria-required="true" required="true" aria-invalid="true" ar
                 );
                 $query = new WP_Query($args);
               ?>
-              <select tabindex="0" aria-label="Practice Area" class=" select hhero__frm__select" name="practice-area" id="practice-area" data-acsb-navigable="true" data-acsb-now-navigable="true" aria-hidden="false" data-acsb-hidden="false" type="select-one" data-acsb-validation-uuid="practice-area" data-acsb-field-visible="true" aria-required="true" required="true" aria-invalid="true" placeholder="Practice Area" data-acsb-tooltip="Practice Area | Required field">
+              <select tabindex="0" aria-label="Practice Area" class=" select hhero__frm__select" name="practice-area" id="practice-area" data-acsb-navigable="true" data-acsb-now-navigable="true" aria-hidden="false" data-acsb-hidden="false" type="select-one" data-acsb-validation-uuid="practice-area" data-acsb-field-visible="true" aria-required="true" aria-invalid="true" placeholder="Practice Area" data-acsb-tooltip="Practice Area | Required field">
                 <option class="hhero__select__placeholder"   value="" disabled selected>Practice Area</option>
                 <?php  
                   if($query->have_posts()){
@@ -94,7 +94,7 @@ field-visible="true" aria-required="true" required="true" aria-invalid="true" ar
       );
       $office_location_posts = new WP_Query($args);
       ?>
-              <select tabindex="0" aria-label="Office Location" class="select hhero__frm__select" name="office" id="office" data-acsb-clickable="true" data-acsb-navigable="true" data-acsb-now-navigable="true" aria-hidden="false" data-acsb-hidden="false" type="select-one" data-acsb-validation-uuid="office" data-acsb-field-visible="true" aria-required="true" required="true" aria-invalid="true"
+              <select tabindex="0" aria-label="Office Location" class="select hhero__frm__select" name="office" id="office" data-acsb-clickable="true" data-acsb-navigable="true" data-acsb-now-navigable="true" aria-hidden="false" data-acsb-hidden="false" type="select-one" data-acsb-validation-uuid="office" data-acsb-field-visible="true" aria-required="true"  aria-invalid="true"
  placeholder="Office Location" data-acsb-tooltip="Office Location | Required field">
                 <option class="hhero__select__placeholder" value="" disabled selected>Office Location</option>
                 <?php
