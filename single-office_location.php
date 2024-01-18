@@ -226,7 +226,7 @@ $professors_services = array($professors_services, $professors_industries, $prof
         </div>
       </div>
 
-      <div class="">
+      <div id="people" class="">
         <h2 tabindex="0" class="title--section" style="margin-top: 80px; margin-bottom: 30px;">
           People at <?php echo get_the_title(); ?>
         </h2>
@@ -238,6 +238,10 @@ $professors_services = array($professors_services, $professors_industries, $prof
             'number' => $per_page,
             'offset' => $offset,
             'paged' => $page,
+            //last name ASC
+            'orderby' => 'meta_value',
+            'order' => 'ASC',
+            'meta_key' => 'last_name',
             'meta_query' => array(
               array(
                 'key' => 'office_location',
@@ -351,14 +355,14 @@ $professors_services = array($professors_services, $professors_industries, $prof
             if ($current_page == 1) {
               echo '<span class="people__page-btn people__page-prev disabled">Previous</span>';
             } else {
-              echo '<a class="people__page-btn people__page-prev" href="' . add_query_arg('pages', $current_page - 1) . '">Previous</a>';
+              echo '<a class="people__page-btn people__page-prev" href="' . add_query_arg('pages', $current_page - 1) . '#people">Previous</a>';
             }
             for ($i = 1; $i <= $total_pages; $i++) {
               if ($i == $current_page) {
                 echo '<span class="people__page-btn people__page-num current index__hide__pagenation">' . $i . '</span>';
               } else {
                 if ($i == 1 || $i == $total_pages || ($i >= $current_page - 2 && $i <= $current_page + 2)) {
-                  echo '<a class="people__page-btn people__page-num index__hide__pagenation" href="' . add_query_arg('pages', $i) . '">' . $i . '</a>';
+                  echo '<a class="people__page-btn people__page-num index__hide__pagenation" href="' . add_query_arg('pages', $i) . '#people">' . $i . '</a>';
                 } elseif ($i == $current_page - 3 || $i == $current_page + 3) {
                   echo '<span class="people__page-btn people__page-num dots index__hide__pagenation">...</span>';
                 }
@@ -368,7 +372,7 @@ $professors_services = array($professors_services, $professors_industries, $prof
             if ($current_page == $total_pages) {
               echo '<span class="people__page-btn people__page-next disabled">Next</span>';
             } else {
-              echo '<a class="people__page-btn people__page-next" href="' . add_query_arg('pages', $current_page + 1) . '">Next</a>';
+              echo '<a class="people__page-btn people__page-next" href="' . add_query_arg('pages', $current_page + 1) . '#people">Next</a>';
             }
             echo '</div>';
           }
