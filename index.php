@@ -107,7 +107,19 @@ get_template_part('template-parts/shared/banner-template', null, array(
       <?php
       // get professors users roll
       $filter_select = array(
-        'role' => 'professor'
+        'role' => 'professor',
+        'meta_query' => array(
+          'relation' => 'OR',
+          array(
+            'key' => 'display_user_profile',
+            'value' => 'true',
+            'compare' => '='
+          ),
+          array(
+            'key' => 'display_user_profile',
+            'compare' => 'NOT EXISTS'
+          )
+        )
       );
       $professors = get_users($filter_select);
       ?>
