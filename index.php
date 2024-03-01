@@ -160,10 +160,10 @@ get_template_part('template-parts/shared/banner-template', null, array(
           See All
         </a>
       </div>
-      <div class="index__bttm__btn__area--submit" >
-      <button onclick="this.form.submit()" class="index__bttm__btn index__bttm__submit">
-      <?php get_template_part("/assets/images/svg/search-icon") ?>
-      Search
+      <div class="index__bttm__btn__area--submit">
+        <button onclick="this.form.submit()" class="index__bttm__btn index__bttm__submit">
+          <?php get_template_part("/assets/images/svg/search-icon") ?>
+          Search
         </button>
       </div>
     </form>
@@ -478,28 +478,42 @@ get_template_part('template-parts/shared/banner-template', null, array(
                   $count++;
 
             ?>
-                <a href="<?php echo get_tag_link($tag->term_id) . '#news';  ?>" class="<?php echo 'index__filter-link-tag active__tag' ?>"><?php echo $tag->name ?></a>
-            <?php
+                  <a href="<?php echo get_tag_link($tag->term_id) . '#news';  ?>" class="<?php echo 'index__filter-link-tag active__tag' ?>"><?php echo $tag->name ?></a>
+                <?php
                 } else {
-            ?>
-              <a href="<?php echo get_tag_link($tag->term_id) . '#news';  ?>" class="<?php echo 'index__filter-link-tag active__tag-hide' ?>"><?php echo $tag->name ?></a>
+                ?>
+                  <a href="<?php echo get_tag_link($tag->term_id) . '#news';  ?>" class="<?php echo 'index__filter-link-tag active__tag-hide' ?>"><?php echo $tag->name ?></a>
             <?php
+                }
               }
-            }
             }
             ?>
             <span id="seemore" class="news__tag news__tag--bold">
-            See More
-            <?php
+              See More
+              <?php
 
-              echo get_template_part( 'assets/images/svg/left-arrow' );
-            ?>
-          </span>
+              echo get_template_part('assets/images/svg/left-arrow');
+              ?>
+            </span>
+          </div>
+        </div>
+        <div class="index__filter-sec">
+          <h4 tabindex="0" class="index__filter-title">Other Tucker Arensberg Websites & Resources</h4>
+          <div class="index__filter-link-sec">
+            <ul>
+              <li><a href="https://centralpacriminaldefense.com/" target="_blank" class="index__filter-link">Central & Western Pennsylvania Criminal Defense</a></li>
+              <li><a href="https://centralpafamilyattorney.com/" target="_blank" class="index__filter-link">Central Pennsylvania Family Law</a></li>
+              <li><a href="https://www.medlawblog.com/" target="_blank" class="index__filter-link">Med Law Blog</a></li>
+              <li><a href="https://taressettlement.com/" target="_blank" class="index__filter-link">TARES <span>- Pennsylvania residential and commercial real estate title insurance and closing services</span></a></li>
+              <li><a href="https://tuckeraviator.tuckerlaw.com/" target="_blank" class="index__filter-link">Tucker Aviator <span>- legal services for startup companies</span></a></li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+</div>
 </div>
 <?php
 get_footer();

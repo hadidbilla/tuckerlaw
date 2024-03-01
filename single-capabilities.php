@@ -31,7 +31,11 @@ $current_post_id = get_the_ID();
 $current_post_slug = get_post_field('post_name', $current_post_id);
 // print_r($current_post_slug);
 //get these user id have the current post id in their meta field like industries, departments and services 
-$newQuery = "SELECT user_id FROM wp_usermeta WHERE (meta_key LIKE 'services' AND meta_value LIKE '%" . $current_post_id . "%') OR (meta_key LIKE 'industries' AND meta_value LIKE '%" . $current_post_id . "%') OR (meta_key LIKE 'departments' AND meta_value LIKE '%" . $current_post_id . "%')";
+
+$newQuery = "SELECT user_id FROM wp_usermeta WHERE (meta_key LIKE 'services' AND meta_value LIKE '%" . $current_post_id . "%') OR (meta_key LIKE 'industries' AND meta_value LIKE '%" . $current_post_id . "%') OR (meta_key LIKE 'departments' AND meta_value LIKE '%" . $current_post_id . "%') AND (meta_key LIKE 'display_user_profile' AND meta_value LIKE 'true')";
+
+
+
 //get the user id from the query
 $professors_id = $wpdb->get_results($newQuery);
 //get the user id from the query
@@ -180,30 +184,34 @@ if (isset($_GET['pdf'])) {
     $i = 0;
     foreach ($professors_meta as $key => $value) {
       //get user mail by id
-      $user_info = get_userdata($key);
-      $user_email = $user_info->user_email;
-      $html .= "<div class='newcv__professor' style='float: left; width: 33.33%; box-sizing: border-box; padding: 0 10px;'>";
-      $html .= "<div class='newcv__professor__content'>";
-      $html .= "<h2 class='newcv__team__name'>" . $value['first_name'][0] . " " . $value['last_name'][0] . "</h2>";
-      $html .= "<p class='newcv__professor__title'>";
-      if (isset($value['position'][0])) {
-        $position = get_term_by('id', $value['position'][0], 'position');
-        $html .= $position->name;
-      }
-      $html .= "</p>";
-      $html .= '<p class="newcv__professor__link"><a href="mailto:' . $user_email . '" class="newcv__professor__link text text--smallest">Email: ' . $user_email . '</a></p>';
-      $html .= "<p class='newcv__professor__phone'>";
-      if (isset($value['contact_information_phone'][0]) && $value['contact_information_phone'][0] != "") {
-        $html .= "<a href='tel:" . $value['contact_information_phone'][0] . "' class='newcv__professor__link text text--smallest'>Phone: " . $value['contact_information_phone'][0] . "</a>";
-      } else {
-        $html .= "<p class='newcv__professor__phone'>" . $value['phone'][0] . "</p>";
-      }
-      $html .= "</p>";
-      $html .= "</div>";
-      $html .= "</div>";
-      $i++;
-      if ($i % 3 == 0 && $i != $newcv_professors_count) {
-        $html .= '<div style="clear:both;"></div>';
+      $display_user_profile = get_user_meta($key, 'display_user_profile', true);
+      if ($display_user_profile === 'true') {
+
+        $user_info = get_userdata($key);
+        $user_email = $user_info->user_email;
+        $html .= "<div class='newcv__professor' style='float: left; width: 33.33%; box-sizing: border-box; padding: 0 10px;'>";
+        $html .= "<div class='newcv__professor__content'>";
+        $html .= "<h2 class='newcv__team__name'>" . $value['first_name'][0] . " " . $value['last_name'][0] . "</h2>";
+        $html .= "<p class='newcv__professor__title'>";
+        if (isset($value['position'][0])) {
+          $position = get_term_by('id', $value['position'][0], 'position');
+          $html .= $position->name;
+        }
+        $html .= "</p>";
+        $html .= '<p class="newcv__professor__link"><a href="mailto:' . $user_email . '" class="newcv__professor__link text text--smallest">Email: ' . $user_email . '</a></p>';
+        $html .= "<p class='newcv__professor__phone'>";
+        if (isset($value['contact_information_phone'][0]) && $value['contact_information_phone'][0] != "") {
+          $html .= "<a href='tel:" . $value['contact_information_phone'][0] . "' class='newcv__professor__link text text--smallest'>Phone: " . $value['contact_information_phone'][0] . "</a>";
+        } else {
+          $html .= "<p class='newcv__professor__phone'>" . $value['phone'][0] . "</p>";
+        }
+        $html .= "</p>";
+        $html .= "</div>";
+        $html .= "</div>";
+        $i++;
+        if ($i % 3 == 0 && $i != $newcv_professors_count) {
+          $html .= '<div style="clear:both;"></div>';
+        }
       }
     }
     $html .= "</div>";

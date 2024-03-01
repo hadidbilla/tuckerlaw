@@ -7,7 +7,7 @@
   <button onclick="hideModal()" type="button" class=" cksm__btn cksm__btn--pry">
     <?php echo get_theme_mod('gs_cookies_modal_btn_text_1', 'I consent to cookies'); ?>
 </button>
-  <button  type="button" class="cksm__btn cksm__btn--pry">
+  <button onclick="hideModal()"  type="button" class="cksm__btn cksm__btn--pry">
     <?php echo get_theme_mod('gs_cookies_modal_btn_text_2', 'Decline All'); ?>
   </button>
   <?php
