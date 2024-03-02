@@ -92,11 +92,11 @@ add_role(
 function wpse_hide_cat_descr()
 { ?>
 
-  <style type="text/css">
-    .term-description-wrap {
-      display: none;
-    }
-  </style>
+<style type="text/css">
+.term-description-wrap {
+  display: none;
+}
+</style>
 
 <?php }
 
@@ -862,22 +862,26 @@ function cf7_select_dropdown($tag, $unused)
 //add user meta field boolean in admin panel user profile only admin can see this field and edit this field
 function add_user_meta_fields($user)
 { ?>
-  <!-- <h3 tabindex="0">Extra profile information</h3> -->
-  <?php if (current_user_can('administrator')) { ?>
-    <table class="form-table">
-      <tr>
-        <th><label for="display_user_profile">Display on Front-end</label></th>
-        <td>
-          <select name="display_user_profile" id="display_user_profile">
-            <option value="true" <?php echo esc_attr(get_the_author_meta('display_user_profile', $user->ID)) == 'true' ? 'selected' : ''; ?>>Show</option>
-            <option value="false" <?php echo esc_attr(get_the_author_meta('display_user_profile', $user->ID)) == 'false' ? 'selected' : ''; ?>>Hide</option>
-          </select>
-        </td>
-      </tr>
-    </table>
-  <?php } ?>
+<!-- <h3 tabindex="0">Extra profile information</h3> -->
+<?php if (current_user_can('administrator')) { ?>
+<table class="form-table">
+  <tr>
+    <th><label for="display_user_profile">Display on Front-end</label></th>
+    <td>
+      <select name="display_user_profile" id="display_user_profile">
+        <option value="true"
+          <?php echo esc_attr(get_the_author_meta('display_user_profile', $user->ID)) == 'true' ? 'selected' : ''; ?>>
+          Show</option>
+        <option value="false"
+          <?php echo esc_attr(get_the_author_meta('display_user_profile', $user->ID)) == 'false' ? 'selected' : ''; ?>>
+          Hide</option>
+      </select>
+    </td>
+  </tr>
+</table>
+<?php } ?>
 
-  <?php }
+<?php }
 add_action('show_user_profile', 'add_user_meta_fields');
 add_action('edit_user_profile', 'add_user_meta_fields');
 
@@ -898,14 +902,14 @@ function fix_admin_bar()
 {
   if (is_admin_bar_showing()) {
   ?>
-    <style type="text/css">
-      @media screen and (max-width: 600px) {
-        #wpadminbar {
-          position: fixed !important;
-        }
-      }
-    </style>
-  <?php
+<style type="text/css">
+@media screen and (max-width: 600px) {
+  #wpadminbar {
+    position: fixed !important;
+  }
+}
+</style>
+<?php
   }
 }
 function remove_admin_bar_links() {
@@ -941,29 +945,29 @@ add_filter('upload_mimes', 'gen_upload_mimes_vcard_support');
 
 
 //override the default template with custom template
-add_filter('template_include', 'custom_template_include', 99);
-function custom_template_include($template)
-{
-  //get the current page template
-  $current_page_template = get_post_meta(get_the_ID(), '_wp_page_template', true);
-  //get the url of current page
-  $url = $_SERVER['REQUEST_URI'];
-  //get the second part of url
-  $url = explode('/', $url);
-  //get the second part of url
-  $url = $url[2];
+// add_filter('template_include', 'custom_template_include', 99);
+// function custom_template_include($template)
+// {
+//   //get the current page template
+//   $current_page_template = get_post_meta(get_the_ID(), '_wp_page_template', true);
+//   //get the url of current page
+//   $url = $_SERVER['REQUEST_URI'];
+//   //get the second part of url
+//   $url = explode('/', $url);
+//   //get the second part of url
+//   $url = $url[2];
 
-  //check if $current_page is blog page
+//   //check if $current_page is blog page
 
   
-  //$current_page_template is empty then show with join page template
-  if (empty($current_page_template) && $url != 'people' && $url != 'news-insights' && !is_single() && !is_archive() && !is_author() && !is_category() && !is_tag()) {
-    //show with join page template
-    $template = get_template_directory() . '/page-template/join-page-template.php';
+//   //$current_page_template is empty then show with join page template
+//   if (empty($current_page_template) && $url != 'people' && $url != 'news-insights' && !is_single() && !is_archive() && !is_author() && !is_category() && !is_tag()) {
+//     //show with join page template
+//     $template = get_template_directory() . '/page-template/join-page-template.php';
 
-    return $template;
-  } else {
-    return $template;
-  }
+//     return $template;
+//   } else {
+//     return $template;
+//   }
 
-}
+// }
