@@ -6,8 +6,8 @@ get_template_part('template-parts/shared/banner-template');
 $office_location_meta = get_post_meta(get_the_ID());
 
 $page = ($_GET['pages']) ? $_GET['pages'] : 1;
-      $per_page = get_option('posts_per_page');
-      $offset = (($page - 1) * $per_page);
+$per_page = get_option('posts_per_page');
+$offset = (($page - 1) * $per_page);
 // get professors users roll this location
 $professors = get_users(array(
   'role__in' => array('professor'),
@@ -78,13 +78,15 @@ $professors_services = array($professors_services, $professors_industries, $prof
           ?>
         </div>
         <?php
-        get_template_part(
-          'template-parts/shared/contact-form-template',
-          null,
-          array(
-            'locationName' => $office_location_meta['city'][0]
-          )
-        );
+        if ($office_location_meta['contact_forms'][0] && $office_location_meta['contact_forms'][0] != '') {
+        ?>
+          <div class="contact-con__contact-form">
+            <?php
+            echo apply_shortcodes($office_location_meta['contact_forms'][0]);
+            ?>
+          </div>
+        <?php
+        }
         ?>
       </div>
       <div class="slof">
@@ -340,7 +342,7 @@ $professors_services = array($professors_services, $professors_industries, $prof
         $total_users = count($professors);
         $total_pages = ceil($total_users / $per_page);
         $current_page = $page;
-        if($total_users > $per_page){
+        if ($total_users > $per_page) {
           $pagination = paginate_links(array(
             'base' => add_query_arg('pages', '%#%'),
             'format' => '?pages=%#%',
@@ -377,13 +379,13 @@ $professors_services = array($professors_services, $professors_industries, $prof
             echo '</div>';
           }
           if ($total_pages > 1) {
-          ?>
+        ?>
             <div class="index__pagination-rsp">
               <p class="index__pagination__text text">
                 Page <?php echo $current_page; ?> of <?php echo $total_pages; ?>
               </p>
             </div>
-          <?php
+        <?php
           }
         }
         ?>
