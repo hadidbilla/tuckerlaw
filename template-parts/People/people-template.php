@@ -447,9 +447,49 @@ $url = $_SERVER['REQUEST_URI'];
         }
         // SELECT user_id FROM `wp_usermeta` WHERE (meta_key LIKE 'first_name' OR meta_key LIKE 'last_name') AND LOWER(meta_value) LIKE '%Steven%'
         if ($_GET["user-name"]) {
-          $trimmedName = strtolower(trim($_GET["user-name"]));
-          $queryString = "SELECT user_id FROM wp_usermeta WHERE (meta_key LIKE 'first_name' OR meta_key LIKE 'last_name') AND LOWER(meta_value LIKE '%" . $trimmedName . "%') AND user_id IN (SELECT user_id FROM wp_usermeta WHERE meta_key LIKE 'display_user_profile' AND meta_value LIKE 'true')";
-          $result = $wpdb->get_results($queryString);
+          // $trimmedName = strtolower(trim($_GET["user-name"]));
+          // $queryString = "SELECT user_id FROM wp_usermeta WHERE (meta_key LIKE 'first_name' OR meta_key LIKE 'last_name') AND LOWER(meta_value LIKE '%" . $trimmedName . "%') AND user_id IN (SELECT user_id FROM wp_usermeta WHERE meta_key LIKE 'display_user_profile' AND meta_value LIKE 'true')";
+          // $result = $wpdb->get_results($queryString);
+          // // convert object to array
+          // $result = json_decode(json_encode($result), true);
+          // // convert $resultId to get the user_id
+          // $resultId = array_column($result, 'user_id');
+          // print_r($resultId);
+          // array_push($resultList, $resultId);
+          $args = array(
+            'role' => 'professor',
+            'meta_query' => array(
+              array(
+                'relation' => 'OR',
+                array(
+                  'key' => 'display_user_profile',
+                  'value' => 'true',
+                  'compare' => '='
+                ),
+                array(
+                  'key' => 'display_user_profile',
+                  'compare' => 'NOT EXISTS'
+                )
+              )
+            ),
+            'orderby' => 'meta_value',
+            'meta_key' => 'last_name',
+            'order' => 'ASC'
+          );
+
+          $searchUser = new WP_User_Query($args);
+          $searchUser = $searchUser->results;
+          $splitName = explode(' ', $_GET["user-name"]);
+          //remove empty string
+          $splitName = array_filter($splitName);
+          
+          $query;
+          //loop through the split name
+          foreach ($splitName as $name) {
+            //every name match first name name[0] || first name name[1] || last name name[0] || last name name[1]
+            $query = "SELECT user_id FROM wp_usermeta WHERE (meta_key LIKE 'first_name' OR meta_key LIKE 'last_name') AND LOWER(meta_value) LIKE '%" . strtolower($name) . "%'";
+          }
+          $result = $wpdb->get_results($query);
           // convert object to array
           $result = json_decode(json_encode($result), true);
           // convert $resultId to get the user_id
