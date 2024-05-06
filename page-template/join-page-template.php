@@ -93,16 +93,16 @@ if ($tabs_meta_data) {
           }
           if ($page_meta_data['rich_text_area_custom_button_group_button_label'][0] && $page_meta_data['rich_text_area_custom_button_group_button_label'][0] != '') {
           ?>
-            <div class="">
-              <a href="<?php
+          <div class="">
+            <a href="<?php
                         echo $page_meta_data['rich_text_area_custom_button_group_button_url'][0];
               ?>" class="btn btn--secondary news__btn">
-                <?php
+              <?php
 
                 echo $page_meta_data['rich_text_area_custom_button_group_button_label'][0];
                 ?>
-              </a>
-            </div>
+            </a>
+          </div>
           <?php
           }
           ?>
@@ -129,13 +129,13 @@ if ($tabs_meta_data) {
 get_footer();
 ?>
 <style type="text/css">
-  .join__overview-richtext ul li::before {
+.join__overview-richtext ul li::before {
   content: "";
   position: absolute;
   height: 20px;
   width: 20px;
   top: 6px;
-left: -24px;
+  left: -24px;
   background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/eva_arrow-right-fill-blue.svg');
 }
 </style>
