@@ -492,9 +492,16 @@ $url = $_SERVER['REQUEST_URI'];
           $result = $wpdb->get_results($query);
           // convert object to array
           $result = json_decode(json_encode($result), true);
-          // convert $resultId to get the user_id
+          //get these which are in the searchUser
           $resultId = array_column($result, 'user_id');
+          $searchUser = array_filter($searchUser, function ($user) use ($resultId) {
+            return in_array($user->ID, $resultId);
+          });
+          
           array_push($resultList, $resultId);
+          // // convert $resultId to get the user_id
+          // $resultId = array_column($result, 'user_id');
+          // array_push($resultList, $resultId);
         }
         if ($_GET["practice-area"]) {
           // get capabilities post id by slug
